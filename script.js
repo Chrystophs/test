@@ -31,3 +31,16 @@
     }());
     slideshow.startSlideshow();
 }(jQuery));
+
+/*http://stackoverflow.com/questions/18835477/drawing-animated-arc-with-pure-css*/
+(function($) {
+    
+  var allPanels = $('.accordion > dd').hide();
+    
+  $('.accordion > dt > a').click(function() {
+    allPanels.slideUp();
+    $(this).parent().next().slideDown();
+    return false;
+  });
+
+})(jQuery);
