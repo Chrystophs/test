@@ -6,10 +6,12 @@
 	<title>Clearview</title>
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="style.css"/> 
-	<script src="script.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
-<body>
-<div id="top" class="top-bar">
+<body id="top" onload="startSlider(); Panels();">
+<div class="top-bar">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-lg-6 pull-left visible-lg visible-md">
@@ -27,11 +29,12 @@
 	<div class="row">
 	<!--Logo Here -->
 		<div class="col-sm-6 col-md-6 col-lg-6 pull-left">
-			 		<img src="/i/logo.png" />
+			 		<img src="svg/logo.svg" />
 		</div>
 		<!--Top right Navigation-->
 		<div class="col-sm-6 col-md-4 col-lg-4 pull-right">
 			<div class="circle-btn">
+				<img src="svg/food.svg"/><img src="svg/calendar.svg"/><img src="svg/directory.svg"/>
 			</div>
 		</div>
 	</div>
@@ -42,7 +45,7 @@
 <div class="container">
 	<div class="navbar ">
 			<ul class="nav">
-				<li><a href="#" alt="#"><img src="/i/house.png" alt="Home"/></a></li>
+				<li><a href="#" alt="#"><img src="svg/home.svg" alt="Home"/></a></li>
 				<li><a href="#" alt="About Us">About Us</a>
 					<ul class="dropdown">
 						<li><a href="#" alt="#">Our Goals</a></li>
@@ -64,62 +67,78 @@
 </div>
 <!-- Main Content -->
 <div class="body-bg">
-	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-			<div id="slideshow">
-				<img class="slide" src="img/puppy1.jpg">
-				<img class="slide" src="img/puppy2.jpg">
-				<img class="slide" src="img/puppy3.jpg">
-				<img class="slide" src="img/puppy4.jpg">
-				<img class="slide" src="img/puppy5.jpg">
-			</div>
+				<div class="wrapper">
+					<div class="slider hidden-sm">	
+						<img id="1" src="i/slide1.jpg">
+						<img id="2" src="i/slide2.jpg">
+						<img id="3" src="i/slide1.jpg">
+					</div>
+					<a href="#" class="prev" onclick="return false; prev();" ><img src="svg/prev.svg"/></a>
+					<a href="#" class="next" onclick="return false; next();" ><img src="svg/next.svg"/></a>
+				</div>
 			</div>
 		</div>
+	<div class="arcContain hidden-sm">
+	    <div class="archide">
+	        <div class="arc"></div>
+	    </div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<hr class="top"/>
 		</div>
+		<div class="button">Test</div>
+			<div class="panel">
+				<p>This is a Test to see how the Panels works here and and not there.</p>
+			</div>
+		</div>
 		<div class="col-md-3 col-lg-3 sidebar">
-			<div class="btn btn-sidebar">Announcements</div>
-			<h2 id="announcement">School Spirit Day</h2>
-			<p>Sed at lacus vulputate tortor rhoncus ut vitae risus.</p>
-			<hr/>
-			<h2 id="announcement">Board Meeting Cancelled</h2>
-			<p>Sed at lacus vulputate tortor vestibulum vitae.</p>
-			<hr/>
-			<div id="q-link" class="btn btn-sidebar">Quick Links</div>
-			<a href="#"><p id="q-links">Template Instructions</p></a>
-			<hr/>
-			<a href="#"><p id="q-links">Directions</p></a>
-			<hr/>
-			<a href="#"><p id="q-links">Contact Us</p></a>
-			<hr/>
-			<a href="#"><p id="q-links">Hours of Operations</p></a>
-			<hr/>
-			<a href="#"><p id="q-links">Lunch Menu</p></a>
-			<hr/>
-			<a href="#"><p id="q-links">Forms/Documents</p></a>
-			<hr/>
-			<div class="btn btn-sidebar event">UpComming Events</div>
-			<span class="event-date">mar. 23</span>
-			<span class="event-title">Middle School Assembly</span>
-			<span class="event-time">9:00AM-10:00AM</span>
-			<hr/>
-			<span class="event-date">april 11</span>
-			<span class="event-title">Street Fair</span>
-			<span class="event-time">10:00AM-1:00PM</span>
-			<hr/>
-			<span class="event-date">april 12</span>
-			<span class="event-title">Valentine's Day Dance</span>
-			<span class="event-time">7:00pm</span>
-			<hr/>
-			<span class="event-date">april 14</span>
-			<span class="event-title">Blood Drive at the<br/>High School</span>
-			<span class="event-time">7:00PM</span>
-			<hr/>
-			<div class="btn btn-rec-calendar"><span>>></span> View Calendar</div>
+			<div id="1" class="btn btn-sidebar button">Announcements</div>
+				<div id="1" class="panel">
+					<h2 class="announcement">School Spirit Day</h2>
+					<p>Sed at lacus vulputate tortor rhoncus ut vitae risus.</p>
+					<hr/>
+					<h2 class="announcement">Board Meeting Cancelled</h2>
+					<p>Sed at lacus vulputate tortor vestibulum vitae.</p>
+					<hr/>
+				</div>
+			<div id="q-link 2" class="btn btn-sidebar button">Quick Links</div>
+				<div class="panel">
+					<a href="#"><p id="q-links">Template Instructions</p></a>
+					<hr/>
+					<a href="#"><p id="q-links">Directions</p></a>
+					<hr/>
+					<a href="#"><p id="q-links">Contact Us</p></a>
+					<hr/>
+					<a href="#"><p id="q-links">Hours of Operations</p></a>
+					<hr/>
+					<a href="#"><p id="q-links">Lunch Menu</p></a>
+					<hr/>
+					<a href="#"><p id="q-links">Forms/Documents</p></a>
+					<hr/>
+				</div>
+			<div id="3"class="btn btn-sidebar event button">UpComming Events</div>
+				<div class="panel">
+					<span class="event-date">mar. 23</span>
+					<span class="event-title">Middle School Assembly</span>
+					<span class="event-time">9:00AM-10:00AM</span>
+					<hr/>
+					<span class="event-date">april 11</span>
+					<span class="event-title">Street Fair</span>
+					<span class="event-time">10:00AM-1:00PM</span>
+					<hr/>
+					<span class="event-date">april 12</span>
+					<span class="event-title">Valentine's Day Dance</span>
+					<span class="event-time">7:00pm</span>
+					<hr/>
+					<span class="event-date">april 14</span>
+					<span class="event-title">Blood Drive at the<br/>High School</span>
+					<span class="event-time">7:00PM</span>
+					<hr/>
+				</div>
+			<div id="4" class="btn btn-rec-calendar hidden-md"><span>>></span> View Calendar</div>
 
 		</div>
 		<div class="col-md-8 col-lg-8 content">
@@ -131,6 +150,88 @@
 			<p> Sed at lacus vulputate tortor rhoncus. Quisque ultrices sagitdunt eros sapien, et viverra purus dapibus quisbulum ut vros Quisquie ultrices sagittis ipsum quis malesuada amet.</p>
 			<hr/>
 		</div>
+		<div class="col-md-4 col-lg-4 latest">
+			<div class="latest-content">
+				<div class="btn btn-gray">Latest News</div>
+					<div class="col-md-4 col-lg-4">
+						<img src="i/snowboard.jpg"/>
+					</div>
+					<div class="col-md-8 col-lg-8">
+						<h1>Student Success</h1>
+						<span>Sed at lacus vulputate tortor rhoncus vestibulum ut vitae risus. Vivamus placerat fermentum risus, a porttitor...</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<img src="i/football.jpg"/>
+					</div>
+					<div class="col-md-8 col-lg-8">
+						<h1>Field Trip Information<br/>for Parents</h1>
+						<span>Sed at lacus vulputate tortor Vivamus placerat fermentum risus, a feugiat nulla porttitor...</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<img src="i/chalkboard.jpg"/>
+					</div>
+					<div class="col-md-8 col-lg-8">
+					<h1>Smith Graduates with Honors</h1>
+					<span>Sed at lacus vulputate tortor rhoncus vestibulum ut vitae risus. Vivamus fermentum risus, a feugiat nulla porttitor...</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-lg-4 upcoming">
+			<div class="upcoming-content">
+				<div class="btn btn-gray">Upcoming Events</div>
+					<div class="col-md-4 col-lg-4 upcoming-date">
+						Mar<span>23</span>
+					</div>
+					<div class="col-md-8 col-lg-8 upcoming-title">
+					<h1>Middle School Assembly</h1>
+					<span>9:00AM-10:00AM</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+					<div class="col-md-4 col-lg-4 upcoming-date">
+						April<span>11</span>
+					</div>
+					<div class="col-md-8 col-lg-8 upcoming-title">
+					<h1>Street Fair</h1>
+					<span>10:00AM-1:00PM</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+					<div class="col-md-4 col-lg-4 upcoming-date">
+						April<span>12</span>
+					</div>
+					<div class="col-md-8 col-lg-8 upcoming-title">
+					<h1>Valentine's Day Dance</h1>
+					<span>7:00PM</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+					<div class="col-md-4 col-lg-4 upcoming-date">
+						April<span>14</span>
+					</div>
+					<div class="col-md-8 col-lg-8 upcoming-title">
+					<h1>Blood Drive at the High School</h1>
+					<span>8:00PM</span>
+					</div>
+					<div class="col-md-12 col-lg-12">
+						<hr/>
+					</div>
+				<div class="btn btn-rec-calendar2"><span>>></span> View Calendar</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="container">
@@ -139,27 +240,26 @@
 		</div>
 	</div>
 </div>
-
-<div class="arcContain">
-    <div class="archide">
-        <div class="arc"></div>
-    </div>
-</div>
-
 <footer>
 <div class="footer-bar">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
+					<div class="address">
+						Clearview Area School District / 328 Innovation Blvd. / State College, PA 16803
+					</div>
+			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
-				<h3>General Information</h3>
-				Call: <span>Phone Number</span> or <button type="button" class="btn-email">email</button>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 social-icons">
-				<h3>Find<em>us</em>on social media</h3>
-				<!--Icons here-->
+			<div class="col-md-12 col-lg-12 info">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 gen-info pull-left">
+					<h3>General Information</h3>
+					Call: <span>123.456.7890</span> or <span class="email">email<span>&raquo;</span></span>	
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 social-icons">
+					<h3>Find<span>us</span>on social media</h3>
+					<img src="svg/linkedin.svg" class="icon"/><img src="svg/youtube.svg"/><img src="svg/vimeo.svg" class="icon"/><img src="svg/pinterest.svg"/><img src="svg/twitter.svg" class="icon"/><img src="svg/facebook.svg" class="last-icon"/>
+				</div>
 			</div>
 		</div>
 		</div>
