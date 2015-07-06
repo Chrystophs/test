@@ -5,7 +5,7 @@ function startSlider() {
   var sliderNext = 2;
   var count = $(".slider img").size();
 
-  slideInterval = setInterval(function(){
+  setInterval(function(){
     $(".slider #"+sliderNext).show("slide", {direction:'right'}, 500);
     $(".slider #"+sliderNext).delay(5500).hide("slide", {direction:'left'}, 500);
 
@@ -42,9 +42,102 @@ function showSlide(id){
 
 
   function Panels(){
-   $(function(){
-    $("#accordion").accordion();
-   })
+
+   var speed = 1000;
+
+   $("#panel1").click(function(){
+      $(".panel1").slideToggle(speed);
+
+      var panelMinus = "svg/panelToggleMinus.svg";
+      var panelPlus = "svg/panelTogglePlus.svg";
+      var panelSign = panelPlus;
+
+      if(panelSign == panelPlus){
+        panelSign = panelMinus;
+      }else {
+        panelSign = panelPlus;
+      }
+
+      $("#panel1 img").attr('src', panelSign);
+
+   });
+
+   $("#q-link").click(function(){
+      $(".panel2").slideToggle(speed);
+
+      var panelMinus = "svg/panelToggleMinus.svg";
+      var panelPlus = "svg/panelTogglePlus.svg";
+      var panelSign = panelPlus;
+
+      if(panelSign == panelPlus){
+        panelSign = panelMinus;
+      }else {
+        panelSign = panelPlus;
+      }
+
+      $("#q-link img").attr('src', panelSign);
+   });
+   $("#panel3").click(function(){
+      $(".panel3").slideToggle(speed);
+
+      setInterval(function(){
+      var panelMinus = "svg/panelToggleMinus.svg";
+      var panelPlus = "svg/panelTogglePlus.svg";
+      var panelSign = panelPlus;
+
+      if(panelSign == panelPlus){
+        panelSign = panelMinus;
+      }else {
+        panelSign = panelPlus;
+      }
+      $("#panel3 img").attr('src', panelSign);
+    });
+   });
+   $("#panel4").click(function(){
+      $(".panel4").slideToggle(speed);
+
+      var panelMinus = "svg/panelToggleMinus.svg";
+      var panelPlus = "svg/panelTogglePlus.svg";
+      var panelSign = panelPlus;
+
+      if(panelSign == panelPlus){
+        panelSign = panelMinus;
+      }else {
+        panelSign = panelPlus;
+      }
+
+      $("#panel4 img").attr('src', panelSign);
+   });
+   $("#panel5").click(function(){
+      $(".panel5").slideToggle(speed);
+
+      var panelMinus = "svg/panelToggleMinus.svg";
+      var panelPlus = "svg/panelTogglePlus.svg";
+      var panelSign = panelPlus;
+
+      if(panelSign == panelPlus){
+        panelSign = panelMinus;
+      }else {
+        panelSign = panelPlus;
+      }
+
+      $("#panel5 img").attr('src', panelSign);
+   });
+   $("#panel6").click(function(){
+      $(".panel6").slideToggle(speed);
+
+      var panelMinus = "svg/panelToggleMinus.svg";
+      var panelPlus = "svg/panelTogglePlus.svg";
+      var panelSign = panelPlus;
+
+      if(panelSign == panelPlus){
+        panelSign = panelMinus;
+      }else {
+        panelSign = panelPlus;
+      }
+
+      $("#panel6 img").attr('src', panelSign);
+   });
   }
 
   function toggleMenu(){
