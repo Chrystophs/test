@@ -241,10 +241,6 @@ a.next {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;  
   }
-  .footer-bar {
-    margin: 0 -15px;
-    padding: 0 25px;
-  }
 }
 
 
@@ -349,6 +345,8 @@ a.next {
 .footer-bar {
   background: #00a195;
   color: #fff;
+    margin: 0 -15px;
+    padding: 0 25px;
 }
 .address {
   font-size: 15px;
