@@ -42,39 +42,14 @@ function showSlide(id){
 
 
   function Panels(){
-    $(".button").click(function(){
-      $(".panel").slideToggle(1000);
+   $(function(){
+    $("#accordion").accordion();
+   })
+  }
+
+  function toggleMenu(){
+    $(".btn-menu").click(function(){
+      $(".drop-nav").slideToggle(1500);
     });
   }
 
-
-
-/*$(function() 
-{
-  $(".slider ul")
-  .cycle({
-    prev:   '.slider .controls .prev', 
-      next:   '.slider .controls .next',
-    timeout: 3000,
-    pager:   '.slider .controls .pages',
-        pagerAnchorBuilder: pagerFactory,
-    before: function(Ec, En, o, f) 
-    {     
-      var classTarget = $(Ec);
-      var nextClassTarget = $(En);
-      
-      classTarget = classTarget.context.attributes.rel.value;
-      nextClassTarget = nextClassTarget.context.attributes.rel.value;
-      
-      $('.slider .controls .' + classTarget).removeClass('selected');
-      $('.slider .controls .' + nextClassTarget).addClass('selected');
-    }
-  });
-  
-  // Pager Function
-  function pagerFactory(idx, slide) 
-  {
-    var selected = (idx == 0 ? 'selected' : null);
-    return '<img src="images/blank.gif" width="13" height="14" class="number '+ selected + ' ' + parseInt(idx+1)+'" />';
-    };
-});*/
